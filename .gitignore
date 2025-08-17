@@ -3,4 +3,3 @@ __pycache__/
 venv/
 .env
 static/output_video.mp4
-model/
