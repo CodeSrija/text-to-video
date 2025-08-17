@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Text-to-Video Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🎬 AI-Powered Text-to-Video Generator</h1>
+            <p>Turn your imagination into short videos instantly. Describe your scene and watch AI bring it to life.</p>
+            <a href="#video-section" class="cta-btn">🚀 Generate Your Video</a>
+        </div>
+    </section>
+
+    <!-- Video & Controls Section -->
+    <section id="video-section" class="main-section">
+
+        <!-- Video Display -->
+        <div class="video-container">
+            {% if output %}
+                <video controls autoplay>
+                    <source src="{{ output }}" type="video/mp4">
+                </video>
+            {% else %}
+                <div class="placeholder">
+                    <div class="example-prompts">
+                        <p>💡 Try prompts like:</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-style: italic;">"A cat playing with a ball of yarn"</li>
+                            <li style="font-style: italic;">"A bird flying over the ocean at sunset"</li>
+                            <li style="font-style: italic;">"Cute kittens playing in the garden"</li>
+                        </ul>
+                    </div>
+                    <p class="disclaimer">⚠️ Disclaimer: Please refresh/restart the page after each video generation.</p>
+                </div>
+            {% endif %}
+
+            <!-- Progress Text -->
+            <div id="progress-container">
+                <div id="progress-text">Preparing...</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="control-card">
+            <h2>Generate Your Video</h2>
+            <form id="video-form" method="POST">
+                <input type="text" name="prompt" placeholder="Describe your scene..." required>
+
+                <label>Frames: <span id="frames-val">16</span></label>
+                <input type="range" id="num_frames" name="num_frames" min="8" max="32" value="16">
+
+                <label>Inference Steps: <span id="steps-val">25</span></label>
+                <input type="range" id="num_inference_steps" name="num_inference_steps" min="5" max="50" value="25">
+
+                <label>Video Time (s): <span id="time-val">5</span></label>
+                <input type="range" id="video_time" name="video_time" min="2" max="15" value="5">
+
+                <button type="submit" id="generate-btn">🚀 Generate Video</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>How It Works</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3>1️⃣ Enter Prompt</h3>
+                <p>Describe any scene, idea, or story you want to see in a video.</p>
+            </div>
+            <div class="feature-card">
+                <h3>2️⃣ AI Generates Frames</h3>
+                <p>Our AI pipeline converts your text into high-quality video frames.</p>
+            </div>
+            <div class="feature-card">
+                <h3>3️⃣ Export Video</h3>
+                <p>The generated frames are compiled into a playable video you can download or share.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made by D.Srija | <a href="https://github.com/CodeSrija" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero section */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f0f0f 0%, #121212 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #00ffc8;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    background: linear-gradient(90deg, #00ffc8, #00e6b8);
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #0f0f0f;
+    transition: all 0.2s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 255, 200, 0.4);
+}
+
+/* Main section with video and controls */
+.main-section {
+    display: flex;
+    gap: 40px;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video-container {
+    flex: 2;
+    max-width: 800px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+.video-container video {
+    height: 90%;
+    width: auto;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.placeholder {
+    text-align: center;
+    color: #aaa;
+}
+
+.placeholder .disclaimer {
+    font-size: 1rem;
+    color: #ffcc00;
+    font-style: italic;
+    margin-top: 10px;
+    transform: translateY(150px);
+}
+
+.control-card {
+    flex: 1;
+    min-width: 300px;
+    height: 500px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 255, 200, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control-card h2 {
+    color: #00ffc8;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="range"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: none;
+    background: #222;
+    color: #fff;
+}
+
+input[type="range"] {
+    appearance: none;
+    height: 8px;
+    background: #444;
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #00ffc8;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+
+#generate-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    width: 200px;
+    height: 50px;
+    padding: 10px 0;
+    font-size: medium;
+    background: linear-gradient(90deg, #00ffc8, #00e6b8);
+    color: #0f0f0f;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 255, 200, 0.4);
+}
+
+/* Progress text only */
+#progress-container {
+    display: none;
+    margin-top: 15px;
+}
+
+#progress-text {
+    font-weight: 500;
+    color: #00ffc8;
+    font-size: 1rem;
+}
+
+#progress-bar-bg,
+#progress-bar {
+    display: none;
+}
+
+/* Features section */
+.features {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00ffc8;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 20px;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 6px 18px rgba(0, 255, 200, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #00ffc8;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: #121212;
+    color: #888;
+}
+
+footer a {
+    color: #00ffc8;
+    font-weight: 500;
+}
